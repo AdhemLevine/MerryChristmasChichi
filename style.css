@@ -1,0 +1,129 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  background-color: #d5f5e3; /* Pastel green for Christmas */
+}
+.card {
+  width: 640px;
+  height: 400px;
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  -webkit-perspective: 1200px;
+  perspective: 1200px;
+  transition: 1s;
+}
+.card:hover {
+  transform: rotate(-5deg);
+}
+.card:hover .outside {
+  transform: rotateY(-130deg);
+}
+.outside,
+.inside {
+  height: 100%;
+  width: 50%;
+  position: absolute;
+  left: 50.1%;
+}
+.inside {
+  background: linear-gradient(to right, #e7e7e7, #ffffff 30%);
+  border: 5px solid #FF6961;
+  border-radius: 10px;
+  line-height: 2;
+  padding: 0 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  left: 50%;
+}
+.outside {
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  z-index: 1;
+  transform-origin: left;
+  transition: 2s;
+  cursor: pointer;
+}
+.front,
+.back {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform: rotateX(0deg);
+}
+.front {
+  background-color: #ffffff; /* White front */
+  border: 5px solid 
+  #FF6961; /* Red border */
+  border-radius: 10px;
+}
+.back {
+  transform: rotateY(180deg);
+  background-color: white; /* Set the background to white */
+  border: 5px solid #FF6961; /* Green border */
+  border-radius: 10px;
+}
+.cake {
+  width: 100%;
+  position: absolute;
+  bottom: 30px;
+}
+.cake {
+  width: 0;
+  height: 0;
+  border-left: 120px solid transparent;
+  border-right: 120px solid transparent;
+  border-bottom: 200px solid #a5e1a6; /* Green for the Christmas tree */
+  position: relative;
+  margin: auto;
+}
+.cake:before {
+  content: "";
+  position: absolute;
+  bottom: -30px;
+  left: -30px;
+  width: 60px;
+  height: 30px;
+  
+}
+.cake:after {
+  content: "";
+  position: absolute;
+  top: -20px;
+  left: -100px;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, #006400 10%, transparent 10%), radial-gradient(circle, #ffff00 10%, transparent 10%), radial-gradient(circle, #ffffff 10%, transparent 10%);
+  background-size: 40px 40px;
+  background-position: 0 0, 20px 20px, 40px 40px;
+}
+.candle {
+  display: none; /* Hide the candle for the Christmas tree */
+}
+.outside p {
+  font-size: 23px;
+  text-transform: uppercase;
+  margin-top: 120px;
+  text-align: center;
+  letter-spacing: 6px;
+  color: #ff0000; /* Bright red text */
+}
+.inside h1 {
+  font-size: 120px;
+  line-height: 120px;
+  color: #008000; /* Green for inside heading */
+}
+
+
